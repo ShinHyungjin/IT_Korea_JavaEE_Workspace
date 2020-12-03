@@ -1,0 +1,23 @@
+package board.gui;
+
+import javax.swing.JFrame;
+
+import javafx.scene.layout.Border;
+
+public class BoardMain extends JFrame{
+	Page[] pageList = new Page[Pages.values().length];
+	
+	public BoardMain() {
+		
+		pageList[0] = new BoardList(this);
+		pageList[1] = new BoardWrite(this);
+		pageList[2] = new BoardContent(this);
+		
+		setSize(900,700);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	public static void main(String[] args) {
+		 new BoardMain();
+	}
+}

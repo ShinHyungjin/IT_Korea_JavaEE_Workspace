@@ -1,0 +1,12 @@
+package board.gui;
+
+import javax.swing.JPanel;
+
+public class Page extends JPanel{
+	BoardMain boardMain;
+	public Page(BoardMain boardMain) {
+		this.boardMain = boardMain;
+	}
+
+
+}

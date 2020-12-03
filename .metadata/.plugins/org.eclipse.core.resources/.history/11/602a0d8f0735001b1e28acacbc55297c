@@ -1,0 +1,9 @@
+package board.gui;
+
+public class BoardWrite {
+
+	public BoardWrite() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package board.gui;
+
+public class BoardModel {
+
+	public BoardModel() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
