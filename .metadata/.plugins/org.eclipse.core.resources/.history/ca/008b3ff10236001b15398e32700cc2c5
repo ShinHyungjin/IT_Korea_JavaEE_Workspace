@@ -1,0 +1,50 @@
+<%@page import="board.model.ImageBoardDAO"%>
+<%@page import="board.model.ImageBoard"%>
+<%@page import="common.FileManager"%>
+<%@page import="org.apache.commons.fileupload.FileItem"%>
+<%@page import="java.util.List"%>
+<%@page import="java.io.File"%>
+<%@page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
+<%@page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
+<%@ page contentType="text/html; charset=utf-8"%>
+<%!
+	String saveDir = "D:/IT_Korea_Class/JavaEE/BoardApp/WebContent/data";
+	int maxSize = 3 * 1024 * 1024;
+	ImageBoard imageBoard = new ImageBoard();
+	ImageBoardDAO dao = new ImageBoardDAO();
+	%>
+<%
+	maxSize = 2 * 1024 * 1024;
+
+	DiskFileItemFactory itemFactory = new DiskFileItemFactory();
+	itemFactory.setRepository(new File(saveDir));
+	itemFactory.setSizeThreshold(maxSize);
+	itemFactory.setDefaultCharset("utf-8");
+
+	request.setCharacterEncoding("utf-8");
+	ServletFileUpload upload = new ServletFileUpload(itemFactory);
+	List<FileItem> items = upload.parseRequest(request);
+	
+	for(FileItem item : items) {
+		if(item.isFormField()) { // textField라면 db에 넣고~
+			if(item.getFieldName().equals("author")) {
+				imageBoard.setAuthor(item.getString());
+			}else if(item.getFieldName().equals("title")) {
+				imageBoard.setAuthor(item.getString());
+			}else if(item.getFieldName().equals("content")) {
+				imageBoard.setAuthor(item.getString());
+			}
+			out.print(item.getFieldName()+ "\t" + item.getString()+"<br>");
+		}else { // textField가 아니면 업로드~
+			String destFile = saveDir+"/"+System.currentTimeMillis()+"."+FileManager.getExtend(item.getName());
+			File file = new File(destFile);
+			item.write(file);
+			
+			imageBoard.setFilename(destFile);
+			out.print("업로드 완료");
+			
+		}
+	}
+	dao.insert(imageBoard);
+	
+%>

@@ -1,0 +1,13 @@
+package board.model;
+
+public class ImageBoard {
+	private int board_id;
+	private String author;
+	private String title;
+	private String content;
+	private String regdate;
+	private int hit;
+	private String filename;
+	
+
+}

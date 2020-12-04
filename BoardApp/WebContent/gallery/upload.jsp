@@ -26,7 +26,8 @@
 		File file = multi.getFile("photo");
 		file.renameTo(new File(saveDirectory+"/"+filename));
 		
-		response.sendRedirect("/gallery/photo_list.jsp");
+		//response.sendRedirect("/gallery/photo_list.jsp");
+		out.print("업로드 완료");
 		
 		}catch(IOException e) {
 			e.printStackTrace();

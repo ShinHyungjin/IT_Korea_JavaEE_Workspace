@@ -1,0 +1,14 @@
+<%@page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
+<%@page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
+<%@ page  contentType="text/html; charset=utf-8"%>
+<% 
+	String saveDir = "";
+	int maxSize = 2*1024*1024;
+	
+	DiskFileItemFactory itemFactory = new DiskFileItemFactory();
+	itemFactory.setRepository(saveDir);
+	itemFactory.setSizeThreshold(maxSize);
+		
+	ServletFileUpload upload = new ServletFileUpload();	
+
+%>

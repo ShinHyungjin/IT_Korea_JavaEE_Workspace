@@ -1,0 +1,9 @@
+package board.model;
+
+public class ImageBoard {
+
+	public ImageBoard() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
