@@ -134,6 +134,10 @@ public class NoticeDAO {
 				notice.setRegdate(rs.getString("regdate"));
 				notice.setHit(rs.getInt("hit"));
 			}
+			sql = "update notice set hit=hit+1 where notice_id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, notice_id);
+			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

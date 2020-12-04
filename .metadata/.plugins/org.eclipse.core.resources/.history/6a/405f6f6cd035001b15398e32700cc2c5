@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input type="text" placeholder="파일 제목 입력">
+<input type ="file">
+<button>업로드</button>
+
+</body>
+</html>
