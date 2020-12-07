@@ -1,0 +1,9 @@
+package board.model;
+
+public class QnA {
+
+	public QnA() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

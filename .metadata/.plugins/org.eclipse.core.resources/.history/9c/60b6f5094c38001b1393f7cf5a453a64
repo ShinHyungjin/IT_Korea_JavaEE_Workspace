@@ -1,0 +1,35 @@
+package board.model;
+
+public class QnADAO {
+
+	// insert
+	public int insert() {
+		int result = 0;
+
+		return result;
+	}
+
+	// selectAll
+	public List selectAll() {
+
+	}
+
+	// select
+	public QnA select() {
+
+	}
+
+	// update
+	public int update() {
+		int result = 0;
+
+		return result;
+	}
+
+	// delete
+	public int delete() {
+		int result = 0;
+
+		return result;
+	}
+}

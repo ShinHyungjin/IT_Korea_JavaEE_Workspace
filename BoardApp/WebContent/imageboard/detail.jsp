@@ -7,7 +7,7 @@
 	String board_id = request.getParameter("board_id");
 
 	ImageBoardDAO dao = new ImageBoardDAO();
-	ImageBoard imageBoar = dao.select(Integer.parseInt(board_id));
+	ImageBoard imageBoard = dao.select(Integer.parseInt(board_id));
 	
 %>
 <!DOCTYPE html>
@@ -63,7 +63,8 @@ $(function(){
 		if(confirm("수정하시겠어요?")){
 			$("form").attr({
 				method:"post",
-				action:"update.jsp"
+				enctype:"multipart/form-data",
+				action:"edit.jsp"
 			});
 			$("form").submit(); //전송행위!!!
 		}
@@ -84,16 +85,21 @@ $(function(){
 
 <div class="container">
   <form>
-	<input type="hidden" name="board_id" value="<%=imageBoar.getBoard_id()%>">
+	<input type="hidden" name="board_id" value="<%=imageBoard.getBoard_id()%>">
 
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="author" value="<%=imageBoar.getAuthor()%>">
+    <input type="text" id="fname" name="author" value="<%=imageBoard.getAuthor()%>">
 
     <label for="lname">title</label>
-    <input type="text" id="lname" name="title" value="<%=imageBoar.getTitle()%>">
+    <input type="text" id="lname" name="title" value="<%=imageBoard.getTitle()%>">
 
 	<label for="subject">Content</label>
-    <textarea id="subject" name="content" placeholder="Write something.." style="height:200px"><%=imageBoar.getContent()%></textarea>
+    <textarea id="subject" name="content" placeholder="Write something.." style="height:200px"><%=imageBoard.getContent()%></textarea>
+
+	<img src="/data/"<%=imageBoard.getFilename()%> width="50px" height="50px">
+	<input type="hidden" name="filename" value="<%=imageBoard.getFilename()%>">
+	<input type="file" name ="photo">
+	<p>
 
     <input type="button" value="목록으로">
 	<input type="button" value="수정하기">

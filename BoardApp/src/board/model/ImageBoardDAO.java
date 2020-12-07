@@ -113,7 +113,7 @@ public class ImageBoardDAO {
 		PreparedStatement pstmt =  null;
 		Connection con = null;
 		int result = 0;
-		String sql = "update imageboard set author=?, title=?, content=? where board_id=?";
+		String sql = "update imageboard set author=?, title=?, content=?, filename=? where board_id=?";
 		
 		con =dbManager.getConnection();
 		try {
@@ -121,8 +121,8 @@ public class ImageBoardDAO {
 			pstmt.setString(1,imageBoard.getAuthor());
 			pstmt.setString(2,imageBoard.getTitle());
 			pstmt.setString(3,imageBoard.getContent());
-			pstmt.setInt(4, imageBoard.getBoard_id());
-			
+			pstmt.setString(4,imageBoard.getFilename());			
+			pstmt.setInt(5, imageBoard.getBoard_id());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

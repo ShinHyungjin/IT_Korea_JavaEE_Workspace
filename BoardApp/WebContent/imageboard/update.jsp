@@ -14,6 +14,7 @@
 	String author = request.getParameter("author"); //작성자
 	String title = request.getParameter("title");//제목
 	String content = request.getParameter("content");//내용
+	String filename = request.getParameter("filename");//내용
 
 	ImageBoardDAO dao = new ImageBoardDAO();
 	ImageBoard imageBoard = new ImageBoard();
@@ -21,6 +22,7 @@
 	imageBoard.setAuthor(author);
 	imageBoard.setTitle(title);
 	imageBoard.setContent(content);
+	imageBoard.setFilename(filename);
 	imageBoard.setBoard_id(Integer.parseInt(board_id));
 	
 	int result = dao.update(imageBoard);

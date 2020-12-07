@@ -1,0 +1,9 @@
+package board.model;
+
+public class QnADAO {
+
+	public QnADAO() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
