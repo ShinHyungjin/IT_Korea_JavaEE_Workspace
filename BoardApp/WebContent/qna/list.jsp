@@ -31,6 +31,9 @@ th, td {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+a {
+ text-decoration:none;
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -58,10 +61,13 @@ $(function(){
   <tr>
     <td><%=qna.getQna_id()%></td>
     <td>
+    	<%if(qna.getRank() > 0) { // 답변이면 이미지 부여 %>
+    	<img src="/images/reply.png" style="margin-left:<%=10*qna.getDepth()%>px" width="20px" height="20px">
+    	<%} %>
 		<a href="detail.jsp?qna_id=<%=qna.getQna_id()%>"><%=qna.getTitle()%></a>
 	</td>
     <td><%= qna.getWriter()%></td>
-	<td><%=qna.getRegdate()%></td>
+	<td><%=qna.getRegdate().substring(0,10)%></td>
 	<td><%=qna.getHit()%></td>
   </tr>
 	<%}%>
