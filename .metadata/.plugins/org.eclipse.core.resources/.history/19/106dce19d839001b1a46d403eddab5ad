@@ -1,0 +1,15 @@
+<%@ page contentType="text/html;charset=utf-8"%>
+<% 
+
+		request.setCharacterEncoding("utf-8");
+
+		String news_id = request.getParameter("news_id");
+		String author = request.getParameter("author");
+		String msg = request.getParameter("msg");
+
+
+		String sql = "insert into comments(news_id, author, msg) values("+news_id+",'"+author+"','"+msg+"')";
+		out.print(sql);
+	
+
+%>
