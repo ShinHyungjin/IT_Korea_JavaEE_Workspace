@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.config.DeptMapper">
+
+	<!-- 모든 글 검색 -->
+	<select id="selectAll" resultType="emp.model.Dept">
+		select * from dept order by deptno asc
+	</select>
+
+	<!-- 1건 가져오기 -->
+	<select id="select" parameterType="int"
+		resultType="emp.model.Dept">
+		select * from dept where deptno=#{deptno}
+	</select>
+
+	<!-- 1건 수정하기 -->
+	<update id="update" parameterType="emp.model.Dept">
+		update dept set dname=#{dname}, loc=#{loc} where deptno=#{deptno}
+	</update>
+	
+	<!-- 1건 삭제하기 -->
+	<delete id="delete" parameterType="int">
+		delete from dept where deptno=#{deptno}
+	</delete>
+	
+	<!-- 1건 추가하기 -->
+	<insert id="insert" parameterType="emp.model.Dept">
+		insert into dept(dname, loc) values(#{dname}, #{loc})
+	</insert>
+	
+</mapper>

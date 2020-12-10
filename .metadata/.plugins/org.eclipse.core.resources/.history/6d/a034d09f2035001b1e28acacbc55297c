@@ -1,9 +1,0 @@
-package board.model;
-
-public class NoticeDAO {
-
-	public NoticeDAO() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

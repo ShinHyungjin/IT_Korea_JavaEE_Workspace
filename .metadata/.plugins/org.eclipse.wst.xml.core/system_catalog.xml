@@ -202,4 +202,5 @@
   <uri id="org.w3c.xinclude" name="http://www.w3.org/2001/XInclude" uri="jar:file:/D:/IT_Korea_Class/eclipse(2)/plugins/org.eclipse.wst.xsl.core_1.2.100.v201907231732.jar!/xslt-schemas/xinclude.xsd"/>
   <system systemId="http://www.w3.org/2001/xml.xsd" uri="jar:file:/D:/IT_Korea_Class/eclipse(2)/plugins/org.eclipse.xsd_2.18.0.v20200723-0820.jar!/cache/www.w3.org/2001/xml.xsd"/>
   <uri name="http://www.w3.org/2001/XMLSchema" uri="jar:file:/D:/IT_Korea_Class/eclipse(2)/plugins/org.eclipse.xsd_2.18.0.v20200723-0820.jar!/cache/www.w3.org/2001/XMLSchema.xsd"/>
+  <public publicId="-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" uri="jar:file:/D:/IT_Korea_Class/eclipse(2)/plugins/org.mybatis.generator.eclipse.ui_1.4.0.201911242214.jar!/dtds/mybatis-generator-config_1_0.dtd"/>
 </catalog>

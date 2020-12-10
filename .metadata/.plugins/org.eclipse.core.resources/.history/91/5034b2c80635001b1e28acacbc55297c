@@ -1,9 +1,0 @@
-package board.gui;
-
-public class BoardList {
-
-	public BoardList() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

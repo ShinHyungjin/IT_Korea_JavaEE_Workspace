@@ -1,9 +1,0 @@
-package board.gui;
-
-public class Pages {
-
-	public Pages() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

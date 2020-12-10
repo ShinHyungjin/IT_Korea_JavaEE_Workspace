@@ -1,0 +1,20 @@
+<%@page import="board.model.CommentsDAO"%>
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ include file="/inc/lib.jsp" %>
+<%
+	//여기서 쿼리실행할 것은 아니지만, 계획을 세우기 위해 ....
+	request.setCharacterEncoding("utf-8");
+%>
+<jsp:useBean id="comments" class="board.model.Comments"/>
+<jsp:setProperty property="*" name="comments"/>
+<%
+	CommentsDAO dao = 	new CommentsDAO();
+	String resultMsg = null;
+
+	if(dao.insert(comments)==0){
+		resultMsg = "코멘트 등록실패";
+	}else{
+		resultMsg = "코멘트 등록성공";
+		List list = dao.selectAll(comments.getNews_id());
+	}
+%>
