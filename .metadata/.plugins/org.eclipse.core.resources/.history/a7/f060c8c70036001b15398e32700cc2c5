@@ -1,9 +1,0 @@
-package board.model;
-
-public class ImageBoardDAO {
-
-	public ImageBoardDAO() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
