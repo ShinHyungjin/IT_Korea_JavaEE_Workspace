@@ -1,3 +1,4 @@
+<%@page import="board.model.MybatisBoardDAO"%>
 <%@page import="board.model.BoardDAO"%>
 <%@page import="common.file.FileManager"%>
 <%@page import="board.model.Board"%>
@@ -9,7 +10,7 @@
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ include file="/inc/lib.jsp" %>
 <%
-	BoardDAO dao = new BoardDAO();
+	//BoardDAO dao = new BoardDAO();
 
 	//multipart/form-data방식으로 전송된 파라미터는 업로드 컴포넌트를 통해서 처리해야 한다.
 	
@@ -36,6 +37,7 @@
 	Board board = new Board();
 	boolean flag = false;	// 업로드 여부를 판단하는 변수
 	int result = 0;
+	MybatisBoardDAO dao = new MybatisBoardDAO();
 	
 	for( FileItem item: items){
 		if(item.isFormField()){//text 입력기반의 컴포넌트라면...		
