@@ -1,4 +1,5 @@
 %@page import="admin.member.Admin"%>
+<%@page import="admin.member.Admin"%>
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ include file="/inc/lib.jsp" %>
 <%
@@ -22,7 +23,11 @@
 		admin.setMid(mid);
 		admin.setPassword(password);
 		
-		response.sendRedirect("/admin/index.jsp?admin="+admin); //클라이언트로 하여금 지정한 url로 요청을 시도하게끔 하는 기능
+		session.setAttribute("ad", admin);
+		System.out.println("당신이 사용하고 있는 세션 객체는 : " + session);
+		
+		response.sendRedirect("/admin/index.jsp"); //클라이언트로 하여금 지정한 url로 요청을 시도하게끔 하는 기능
+		int x=5;
 	}else{
 		//로그인 실패에 대한 욕!!
 		out.print(getMsgBack("로그인 정보가 올바르지 않습니다"));
