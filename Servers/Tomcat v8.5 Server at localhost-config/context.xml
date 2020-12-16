@@ -20,8 +20,15 @@
     <!-- web application will be reloaded.                                   -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    
+ <!-- mariadb 용 -->
+    <ResourceLink type="javax.sql.DataSource"
+                      name="jdbc/mariadb"
+                      global="jdbc/mariadb" />
 
+<!-- oracle 용  -->
     <ResourceLink type="javax.sql.DataSource"
                       name="jdbc/myoracle"
                       global="jdbc/myoracle" />
+
 </Context>

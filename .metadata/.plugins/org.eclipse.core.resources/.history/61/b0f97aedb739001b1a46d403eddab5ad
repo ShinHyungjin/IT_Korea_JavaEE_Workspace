@@ -1,9 +1,0 @@
-package board.model;
-
-public class CommentsDAO {
-
-	public CommentsDAO() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
