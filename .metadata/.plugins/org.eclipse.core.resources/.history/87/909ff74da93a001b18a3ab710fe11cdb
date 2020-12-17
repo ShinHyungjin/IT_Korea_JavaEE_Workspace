@@ -1,9 +1,0 @@
-<%@page import="board.model.CommentsDAO"%>
-<%@ page contentType="text/html;charset=utf-8"%>
-<%
-	String news_id = request.getParameter("news_id");
-
-	CommentsDAO dao = new CommentsDAO();
-	dao.selectAll(news_id);
-
-%>

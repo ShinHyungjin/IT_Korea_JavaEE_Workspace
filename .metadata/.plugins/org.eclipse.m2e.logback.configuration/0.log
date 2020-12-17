@@ -3362,3 +3362,20 @@
 2020-12-16 17:48:58,510 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2020-12-16 17:48:58,511 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2020-12-16 17:48:58,520 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\IT_Korea_Class\JavaEE\webapp1216\src\test\resources
+2020-12-17 08:47:18,762 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-12-17 08:47:26,713 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-17 08:47:26,725 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2020-12-17 08:47:26,733 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-17 08:47:26,739 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\IT_Korea_Class\JavaEE\webapp1216\src\test\resources
+2020-12-17 17:26:49,859 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @31202770ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-12-17 17:26:50,054 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.29.v20200521; built: 2020-05-27T11:26:53.365Z; git: 77c232aed8a45c818fd27232278d9f95a021095e; jvm 1.8.0_181-b13
+2020-12-17 17:26:50,077 [main] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2020-12-17 17:26:50,077 [main] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2020-12-17 17:26:50,078 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2020-12-17 17:26:50,113 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@483e38b8{/wse,null,AVAILABLE}
+2020-12-17 17:26:50,132 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@56d3c939{HTTP/1.1, (http/1.1)}{0.0.0.0:65448}
+2020-12-17 17:26:50,133 [main] INFO  org.eclipse.jetty.server.Server - Started @31203051ms
+2020-12-17 17:26:50,133 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2020-12-17 17:41:29,832 [Framework stop - Equinox Container: be45043d-4303-485d-9fd1-53cedd6eed61] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@56d3c939{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+2020-12-17 17:41:29,833 [Framework stop - Equinox Container: be45043d-4303-485d-9fd1-53cedd6eed61] INFO  org.eclipse.jetty.server.session - node0 Stopped scavenging
+2020-12-17 17:41:29,850 [Framework stop - Equinox Container: be45043d-4303-485d-9fd1-53cedd6eed61] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@483e38b8{/wse,null,UNAVAILABLE}
