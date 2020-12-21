@@ -1,4 +1,4 @@
-package com.model2.notice.controller;
+package com.model2.board.controller;
 
 import java.io.IOException;
 
@@ -7,32 +7,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.model2.controller.Controller;
-import com.model2.domain.Notice;
-import com.model2.model.NoticeDAO;
+import com.model2.domain.Board;
+import com.model2.model.BoardDAO;
 
 public class RegistController implements Controller{
-	NoticeDAO noticeDAO = new NoticeDAO();
+	BoardDAO boardDAO = new BoardDAO();
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Notice notice = new Notice();
-		//3단계 : 업무
+		Board board = new Board();
 		String title = request.getParameter("title");
 		String writer = request.getParameter("writer");
 		String content = request.getParameter("content");
+		board.setTitle(title);
+		board.setWriter(writer);
+		board.setContent(content);
 		
-		notice.setTitle(title);
-		notice.setWriter(writer);
-		notice.setContent(content);
-		
-		//4단계 : insert의 반환값 int는 결과만 알 수있는것이지 사용자를 위한 저장은 필요없다
-		noticeDAO.insert(notice);
+		int result = boardDAO.insert(board);
 	}
 
+	@Override
 	public String getResultView() {
-		return "/view/notice/regist";
+		return "/view/board/regist";
 	}
 
 	@Override
 	public boolean isForwarding() {
 		return false;
 	}
+	
 }

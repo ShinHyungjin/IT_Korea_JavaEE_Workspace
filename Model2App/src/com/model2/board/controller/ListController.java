@@ -1,29 +1,28 @@
-package com.model2.notice.controller;
+package com.model2.board.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.model2.controller.Controller;
-import com.model2.domain.Notice;
-import com.model2.model.NoticeDAO;
+import com.model2.domain.Board;
+import com.model2.model.BoardDAO;
 
-public class DetailController implements Controller{
-	NoticeDAO noticeDAO = new NoticeDAO();
+public class ListController implements Controller {
+	BoardDAO boardDAO = new BoardDAO();
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Notice notice = noticeDAO.select(Integer.parseInt(request.getParameter("notice_id")));
-		
-		request.setAttribute("notice", notice);
+		List list = boardDAO.selectAll();
+
+		request.setAttribute("boardList", list);
 	}
 
-	@Override
 	public String getResultView() {
-		return "/view/notice/detail";
+		return "/view/board/list";
 	}
 
-	@Override
 	public boolean isForwarding() {
 		return true;
 	}

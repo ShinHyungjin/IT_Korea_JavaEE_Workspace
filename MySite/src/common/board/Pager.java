@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 public class Pager {
-	private int totalRecord; // 총 레코드 수
+	private int totalRecord=0; // 총 레코드 수
 	private int pageSize = 10; //페이지 당 보여질 레코드 수
 	private int totalPage; // 총 존재해야 할 페이지
 	private int blockSize = 10; //블럭당 보여질 페이지 수

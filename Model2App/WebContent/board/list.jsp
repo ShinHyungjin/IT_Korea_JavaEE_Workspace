@@ -1,9 +1,9 @@
-<%@page import="com.model2.domain.Notice"%>
+<%@page import="com.model2.domain.Board"%>
 <%@page import="java.util.List"%>
 <%@page import="common.board.Pager"%>
 <%@ page contentType="text/html;charset=utf-8"%>
 <%	
-	List list = (List)request.getAttribute("noticeList");
+	List list = (List)request.getAttribute("boardList");
 	//DB연동	
 	Pager pager = new Pager();	// 페이징 처리를 클래스로 정의해서 사용하자!
 	pager.init(request, list);
@@ -59,14 +59,18 @@ a{
 		//데이터 추출
 		if(num<1)
 			break;
-		Notice notice=(Notice)list.get(curPos++); 
+		Board board=(Board)list.get(curPos++); 
 	%>
   <tr>
     <td><%=num-- %></td>
-    <td><a href="/notice/detail.do?notice_id=<%=notice.getNotice_id()%>"><%=notice.getTitle() %></td>
-    <td><%=notice.getWriter() %></td>
-	<td><%=notice.getRegdate() %></td>
-	<td><%=notice.getHit() %></td>
+    <td><a href="/board/detail.do?board_id=<%=board.getBoard_id()%>"><%=board.getTitle() %></a>
+    <%if(board.getCnt() > 0) {%>
+    	[<%=board.getCnt()%>]
+    <%}%>
+    </td>
+    <td><%=board.getWriter() %></td>
+	<td><%=board.getRegdate() %></td>
+	<td><%=board.getHit() %></td>
   </tr>
 	<%} %>  
 	
