@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="alwaysUseFullPath" value="true"/>
+		<property name="mappings">
+			<props>
+				<prop key="/hello">testController</prop>
+				<prop key="/board/list">listController</prop>
+				<prop key="/board/delete">deleteController</prop>
+				<prop key="/board/regist">registController</prop>
+				<prop key="/board/edit">editController</prop>
+				<prop key="/board/detail">detailController</prop>
+				<prop key="/comment/list">commentlistController</prop>
+				<prop key="/comment/regist">commentregistController</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="testController" class="com.springmvc.test.controller.TestController"/>
+	<bean id="listController" class="com.springmvc.board.controller.ListController"/>
+	<bean id="deleteController" class="com.springmvc.board.controller.DeleteController"/>
+	<bean id="editController" class="com.springmvc.board.controller.EditController"/>
+	<bean id="registController" class="com.springmvc.board.controller.RegistController"/>
+	<bean id="detailController" class="com.springmvc.board.controller.DetailController"/>
+	<bean id="commentlistController" class="com.springmvc.comment.controller.ListController"/>
+	<bean id="commentregistController" class="com.springmvc.comment.controller.RegistController"/>
+	
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+</beans>
